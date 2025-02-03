@@ -128,16 +128,16 @@ export async function sendTaskNotification(task: Task) {
     return withLinks.replace(/\n/g, '\n');
   };
 
-  const message = `━━━━━━━ NestTask ━━━━━━━
+//  const message = `━━━━━━━ NestTask ━━━━━━━
 📌 <b>${task.name}</b>
 ━━━━━━━━━━━━━━━━━━━━━
 📝 <b>Description</b>
 ${processDescription(task.description)}
-━━━━━━━ Details ━━━━━━━
+━━━━━━━━ Details ━━━━━━━━
 🏷️ <b>Category:</b> #${task.category}
 📅 <b>Due Date:</b> ${formatDate(new Date(task.dueDate), 'MMMM d, yyyy')}
 
-━━━━━━View Task━━━━━━
+━━━━━━━View Task━━━━━━━
 🌐 ${APP_DOMAIN}
 ━━━━━━━━━━━━━━━━━━━━━
 <i>Powered by NestTask</i>${task.isAdminTask ? ' ⚡️' : ''}`;
