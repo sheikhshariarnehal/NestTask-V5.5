@@ -53,7 +53,7 @@ export async function sendTelegramMessage(text: string, photo?: string) {
     } else {
       const requestBody = {
         chat_id: TELEGRAM_CHAT_ID,
-        message_thread_id: 204,  // Correct topic ID from the URL
+     //   message_thread_id: 204,  // Correct topic ID from the URL
         text,
         parse_mode: 'HTML',
         disable_web_page_preview: false,
@@ -128,7 +128,7 @@ export async function sendTaskNotification(task: Task) {
     return withLinks.replace(/\n/g, '\n');
   };
 
-//  const message = `━━━━━━━ NestTask ━━━━━━━
+  const message = `━━━━━━━━━ Title ━━━━━━━━━
 📌 <b>${task.name}</b>
 ━━━━━━━━━━━━━━━━━━━━━
 📝 <b>Description</b>
@@ -137,7 +137,7 @@ ${processDescription(task.description)}
 🏷️ <b>Category:</b> #${task.category}
 📅 <b>Due Date:</b> ${formatDate(new Date(task.dueDate), 'MMMM d, yyyy')}
 
-━━━━━━━View Task━━━━━━━
+━━━━━━━View Task━━━━━━━━
 🌐 ${APP_DOMAIN}
 ━━━━━━━━━━━━━━━━━━━━━
 <i>Powered by NestTask</i>${task.isAdminTask ? ' ⚡️' : ''}`;
@@ -167,8 +167,8 @@ export async function sendAnnouncementNotification(announcement: Announcement) {
 
 ${announcement.content}
 
-━━━━━━━━━ Details ━━━━━━━━━
-🔗 <b>View More:</b> ${APP_DOMAIN}
+━━━━━━━View Task━━━━━━━━
+🌐 ${APP_DOMAIN}
 ━━━━━━━━━━━━━━━━━━━━━
 <i>Powered by NestTask</i>`;
 
