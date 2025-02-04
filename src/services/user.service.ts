@@ -41,12 +41,14 @@ export async function deleteUser(userId: string): Promise<void> {
       throw new Error('Unauthorized: Only admins can delete users');
     }
 
-    // Use the RPC function to delete the user
-    const { error } = await supabase.rpc('delete_user', { user_id: userId });
+    // Call the delete_user RPC function
+    const { error } = await supabase.rpc('delete_user', {
+      user_id: userId
+    });
 
     if (error) {
       console.error('Error deleting user:', error);
-      throw new Error('Failed to delete user');
+      throw new Error(error.message || 'Failed to delete user');
     }
   } catch (error: any) {
     console.error('Error deleting user:', error);
