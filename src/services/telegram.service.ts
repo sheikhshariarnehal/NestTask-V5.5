@@ -128,9 +128,9 @@ export async function sendTaskNotification(task: Task) {
     return withLinks.replace(/\n/g, '\n');
   };
 
-  const message = `━━━━━━━━━ Title ━━━━━━━━━
+  const message = 
 📌 <b>${task.name}</b>
-━━━━━━━━━━━━━━━━━━━━━
+    
 📝 <b>Description</b>
 ${processDescription(task.description)}
 ━━━━━━━━ Details ━━━━━━━━
