@@ -160,14 +160,13 @@ export async function sendAnnouncementNotification(announcement: Announcement) {
   // Try to find an image URL in the announcement content
   const imageUrl = announcement.content.match(/https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp)/i)?.[0];
 
-  const message = `━━━━━━━━━ NestTask ━━━━━━━━━
+  const message = 
 
 🎯 <b>${announcement.title}</b>
-━━━━━━━━━━━━━━━━━━━━━
 
 ${announcement.content}
 
-━━━━━━━View Task━━━━━━━━
+
 🌐 ${APP_DOMAIN}
 ━━━━━━━━━━━━━━━━━━━━━
 <i>Powered by NestTask</i>`;
